@@ -1,0 +1,158 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    // =========================
+    // KERNEL + MEMORY
+    // =========================
+
+    {
+      "name": "Kernel Memory",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/kernel_memory/bin/kernel_memory",
+      "args": ["./configs/memoria.config"],
+      "cwd": "${workspaceFolder}/kernel_memory",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-kernel-memory"
+    },
+    {
+      "name": "SWAP",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/swap/bin/swap",
+      "args": ["./configs/swap.config"],
+      "cwd": "${workspaceFolder}/swap",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-swap"
+    },
+
+    // =========================
+    // MEMORY STICKS
+    // =========================
+
+    {
+      "name": "Memory Stick 1",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/memory_stick/bin/memory_stick",
+      "args": ["./configs/memory_stick.config", "1024"],
+      "cwd": "${workspaceFolder}/memory_stick",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-memory-stick"
+    },
+    {
+      "name": "Memory Stick 2",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/memory_stick/bin/memory_stick",
+      "args": ["./configs/memory_stick.config", "2048"],
+      "cwd": "${workspaceFolder}/memory_stick",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-memory-stick"
+    },
+
+    // =========================
+    // KERNEL
+    // =========================
+
+    {
+      "name": "Kernel Scheduler",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/kernel_scheduler/bin/kernel_scheduler",
+      "args": ["./configs/scheduler.config", "./scripts/proceso.txt"],
+      "cwd": "${workspaceFolder}/kernel_scheduler",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-kernel-scheduler"
+    },
+
+    // =========================
+    // CPU (MULTIPLES)
+    // =========================
+
+    {
+      "name": "CPU 1",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/cpu/bin/cpu",
+      "args": ["./configs/cpu.config", "1"],
+      "cwd": "${workspaceFolder}/cpu",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-cpu"
+    },
+    {
+      "name": "CPU 2",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/cpu/bin/cpu",
+      "args": ["./configs/cpu.config", "2"],
+      "cwd": "${workspaceFolder}/cpu",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-cpu"
+    },
+
+    // =========================
+    // IO (TODAS)
+    // =========================
+
+    {
+      "name": "IO STDIN",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/io/bin/io",
+      "args": ["./configs/io.config", "STDIN"],
+      "cwd": "${workspaceFolder}/io",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-io"
+    },
+    {
+      "name": "IO STDOUT",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/io/bin/io",
+      "args": ["./configs/io.config", "STDOUT"],
+      "cwd": "${workspaceFolder}/io",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-io"
+    },
+    {
+      "name": "IO SLEEP",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/io/bin/io",
+      "args": ["./configs/io.config", "SLEEP"],
+      "cwd": "${workspaceFolder}/io",
+      "MIMode": "gdb",
+      "externalConsole": true,
+      "preLaunchTask": "build-io"
+    }
+  ],
+
+  "compounds": [
+    {
+      "name": "Sistema Completo",
+      "configurations": [
+        "Kernel Memory",
+        "SWAP",
+        "Memory Stick 1",
+        "Memory Stick 2",
+        "Kernel Scheduler",
+        "CPU 1",
+        "CPU 2",
+        "IO STDIN",
+        "IO STDOUT",
+        "IO SLEEP"
+      ]
+    }
+  ]
+}

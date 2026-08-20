@@ -1,0 +1,57 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-kernel-scheduler",
+      "type": "shell",
+      "command": "make",
+      "options": { "cwd": "${workspaceFolder}/kernel_scheduler" }
+    },
+    {
+      "label": "build-kernel-memory",
+      "type": "shell",
+      "command": "make",
+      "options": { "cwd": "${workspaceFolder}/kernel_memory" }
+    },
+    {
+      "label": "build-cpu",
+      "type": "shell",
+      "command": "make",
+      "options": { "cwd": "${workspaceFolder}/cpu" }
+    },
+    {
+      "label": "build-io",
+      "type": "shell",
+      "command": "make",
+      "options": { "cwd": "${workspaceFolder}/io" }
+    },
+    {
+      "label": "build-memory-stick",
+      "type": "shell",
+      "command": "make",
+      "options": { "cwd": "${workspaceFolder}/memory_stick" }
+    },
+    {
+      "label": "build-swap",
+      "type": "shell",
+      "command": "make",
+      "options": { "cwd": "${workspaceFolder}/swap" }
+    },
+
+    {
+      "label": "build-all",
+      "dependsOn": [
+        "build-kernel-memory",
+        "build-swap",
+        "build-memory-stick",
+        "build-kernel-scheduler",
+        "build-cpu",
+        "build-io"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
