@@ -44,10 +44,6 @@ Each module is a standalone C program with its own Makefile, configuration file,
 - **Build system:** Makefiles
 - **Environment:** Linux, deployed and tested across multiple virtual machines to validate real distributed, multi-process behavior
 
-### Notes
-
-This project was developed as the group practical assignment for the Operating Systems course at university, evaluated through automated tests plus an individual oral defense (coloquio) connecting the implementation back to the theoretical concepts of the course.
-
 ---
 
 ## Español
@@ -88,6 +84,4 @@ Cada módulo es un programa en C independiente, con su propio Makefile, archivo 
 - **Sistema de build:** Makefiles
 - **Entorno:** Linux, desplegado y probado en múltiples máquinas virtuales para validar el comportamiento distribuido real, multi-proceso
 
-### Notas
 
-Este proyecto fue desarrollado como trabajo práctico grupal de la materia Sistemas Operativos, evaluado mediante pruebas automatizadas y un coloquio individual que relaciona la implementación con los conceptos teóricos de la materia.
